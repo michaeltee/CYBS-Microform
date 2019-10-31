@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Key Request</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+     </head>
+
+     <body>
+      <h3> Key request data: </h3>
+      <table class="table table-striped table-bordered table-sm">
+         <thead>
+            <tr>
+               <th scope="col">Fieldname</th>
+               <th scope="col">Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>host</td>
+               <td>{{ host }}</td>
+            </tr>
+
+            <tr>
+               <td>date</td>
+               <td>{{ date }}</td>
+            </tr>
+
+            <tr>
+               <td>(request-target)</td>
+               <td>{{ request_target }}</td>
+            </tr>
+
+            <tr>
+               <td>digest</td>
+               <td>{{ digest }}</td>
+            </tr>
+
+            <tr>
+               <td>v-c-merchant-id</td>
+               <td>{{ merchant_id }}</td>
+            </tr>
+
+            <tr>
+               <td>targetOrigin</td>
+               <td>{{ target_origin }}</td>
+            </tr>
+
+            <tr>
+               <td>keyId</td>
+               <td>{{ key_id }}</td>
+            </tr>
+
+            <tr>
+               <td>secret</td>
+               <td>{{ secret }}</td>
+            </tr>
+
+         </tbody>
+      </table>
+
+      <h3> Key response data: </h3>
+      <p><code> {{ response_json }} </code></p>
+
+      <form action="/renderMicroform" method="post">
+         <input type="hidden" name="capture_context" value="{{ capture_context }}">
+       <button type="submit" id="button" class="btn btn-primary">Render Microform</button>
+      </form>
+   </body>
+</html>
